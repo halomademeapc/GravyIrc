@@ -33,10 +33,5 @@ namespace GravyIrc.Messages
             Nick = parsedMessage.Parameters[1];
             KickedBy = parsedMessage.Parameters[2];
         }
-
-        public void TriggerEvent(EventHub eventHub)
-        {
-            eventHub.Trigger(this);
-        }
     }
 }

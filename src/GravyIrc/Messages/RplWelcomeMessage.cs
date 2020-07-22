@@ -11,10 +11,5 @@ namespace GravyIrc.Messages
         {
             Text = parsedMessage.Trailing;
         }
-
-        public void TriggerEvent(EventHub eventHub)
-        {
-            eventHub.Trigger(this);
-        }
     }
 }

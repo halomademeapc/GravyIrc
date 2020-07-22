@@ -6,7 +6,7 @@ namespace GravyIrc.Attributes
     /// Decorates an IServerMessage
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
-    internal class ServerMessageAttribute : Attribute
+    public class ServerMessageAttribute : Attribute
     {
         /// <summary>
         /// IRC Command

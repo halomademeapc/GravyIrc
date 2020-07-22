@@ -31,16 +31,36 @@ namespace GravyIrc.Messages
         /// Register an additional server message type
         /// </summary>
         /// <remarks>Used to extend built-in message types</remarks>
+        /// <typeparam name="TMessage">Type of message to add</typeparam>
+        /// <param name="command">IRC command to associate message type with</param>
+        public static void RegisterServerMessageType<TMessage>(string command) where TMessage : IServerMessage => RegisterServerMessageType(typeof(TMessage), command);
+
+        /// <summary>
+        /// Register an additional server message type
+        /// </summary>
+        /// <remarks>Used to extend built-in message types</remarks>
         /// <param name="messageType">Type of message to add</param>
         public static void RegisterServerMessageType(Type messageType)
+        {
+            if (!messageType.HasCommand())
+                throw new ArgumentException($"{messageType.FullName} must be annotated with {typeof(ServerMessageAttribute).FullName} or command must be passed to registration call.");
+
+            RegisterServerMessageType(messageType, messageType.GetCommand());
+        }
+
+        /// <summary>
+        /// Register an additional server message type
+        /// </summary>
+        /// <remarks>Used to extend built-in message types</remarks>
+        /// <param name="messageType">Type of message to add</param>
+        /// <param name="command">IRC command to associate message type with</param>
+        public static void RegisterServerMessageType(Type messageType, string command)
         {
             var interfaceType = typeof(IServerMessage);
             if (!interfaceType.IsAssignableFrom(messageType))
                 throw new ArgumentException($"{messageType.FullName} must implement {interfaceType.FullName}");
-            if (!messageType.HasCommand())
-                throw new ArgumentException($"{messageType.FullName} must be annotated with {typeof(ServerMessageAttribute).FullName}");
 
-            ServerMessageTypes[messageType.GetCommand()] = messageType;
+            ServerMessageTypes[command] = messageType;
         }
 
         public static IServerMessage Create(ParsedIrcMessage parsedMessage)

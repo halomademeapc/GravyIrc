@@ -52,11 +52,6 @@ namespace GravyIrc.Messages
             Message = text;
         }
 
-        public void TriggerEvent(EventHub eventHub)
-        {
-            eventHub.Trigger(this);
-        }
-
         /// <summary>
         /// Indicates if the message was sent to a channel, not a person
         /// </summary>

@@ -57,10 +57,5 @@ namespace GravyIrc.Messages
         public PartMessage(params string[] channels) => new PartMessage(channels.AsEnumerable());
 
         public IEnumerable<string> Tokens => new[] { "PART", channels };
-
-        public void TriggerEvent(EventHub eventHub)
-        {
-            eventHub.Trigger(this);
-        }
     }
 }

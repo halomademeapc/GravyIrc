@@ -15,7 +15,7 @@
     <DebugType Condition="$(codecov) != ''">full</DebugType>
     <DebugType Condition="$(codecov) == ''">portable</DebugType>
     <DebugSymbols>True</DebugSymbols>
-    <Version>0.1.0-alpha</Version>
+    <Version>0.1.0-alpha2</Version>
     <Product>GravyIrc</Product>
     <PackageReleaseNotes>Initial release; testing travis deploy</PackageReleaseNotes>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>

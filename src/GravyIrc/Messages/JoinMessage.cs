@@ -70,10 +70,5 @@ namespace GravyIrc.Messages
         }
 
         public IEnumerable<string> Tokens => new[] { "JOIN", channels, keys };
-
-        public void TriggerEvent(EventHub eventHub)
-        {
-            eventHub.Trigger(this);
-        }
     }
 }

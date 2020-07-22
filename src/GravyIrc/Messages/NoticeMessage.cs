@@ -46,11 +46,6 @@ namespace GravyIrc.Messages
             Message = text;
         }
 
-        public void TriggerEvent(EventHub eventHub)
-        {
-            eventHub.Trigger(this);
-        }
-
         public IEnumerable<string> Tokens => new[] { "NOTICE", Target, Message };
     }
 }

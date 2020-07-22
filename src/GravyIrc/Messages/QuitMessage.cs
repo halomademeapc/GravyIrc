@@ -39,10 +39,5 @@ namespace GravyIrc.Messages
         }
 
         public IEnumerable<string> Tokens => new[] { "QUIT", Message };
-
-        public void TriggerEvent(EventHub eventHub)
-        {
-            eventHub.Trigger(this);
-        }
     }
 }

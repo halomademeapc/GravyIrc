@@ -469,7 +469,7 @@ namespace GravyIrc.Tests
 
             RaiseDataReceived(mockConnection, client, raw);
 
-            Assert.Equal(0, ircChannel.Users.Count);
+            Assert.Empty(ircChannel.Users);
         }
 
         [Fact]
@@ -575,7 +575,7 @@ namespace GravyIrc.Tests
 
             RaiseDataReceived(mockConnection, client, raw);
 
-            Assert.Equal(0, ircChannel.Users.Count);
+            Assert.Empty(ircChannel.Users);
         }
 
         [Fact]

@@ -11,10 +11,5 @@ namespace GravyIrc.Messages
         {
             Parameters = parsedMessage.Parameters;
         }
-
-        public void TriggerEvent(EventHub eventHub)
-        {
-            eventHub.Trigger(this);
-        }
     }
 }

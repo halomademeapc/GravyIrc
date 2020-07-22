@@ -1,6 +1,7 @@
 ﻿using GravyIrc.Messages;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace GravyIrc
 {
@@ -70,6 +71,30 @@ namespace GravyIrc
         public void Trigger<TMessage>(TMessage message) where TMessage : IrcMessage, IServerMessage
         {
             Trigger(new IrcMessageEventArgs<TMessage>(message));
+        }
+
+        /// <summary>
+        /// Trigger event handlers for an incoming message
+        /// </summary>
+        /// <param name="message">Incoming message from IRC server</param>
+        /// <remarks>Automatically determines types using reflection</remarks>
+        public void Trigger(IServerMessage message)
+        {
+            if (message == null)
+                return;
+
+            var messageType = message.GetType();
+
+            var getHandlerMethod = typeof(EventHub).GetMethod(nameof(GetHandler), BindingFlags.NonPublic | BindingFlags.Instance).MakeGenericMethod(messageType);
+            var handler = getHandlerMethod.Invoke(this, null);
+
+            var genericArgsType = typeof(IrcMessageEventArgs<>).MakeGenericType(messageType);
+            var args = Activator.CreateInstance(genericArgsType, message);
+
+            var handlerType = typeof(ServerMessageEventHandler<>).MakeGenericType(messageType);
+
+            var receivedEvent = handlerType.GetMethod("OnReceived", BindingFlags.NonPublic | BindingFlags.Instance);
+            receivedEvent.Invoke(handler, new object[] { args });
         }
 
         private class ServerMessageEventHandler<TMessage> where TMessage : IrcMessage, IServerMessage

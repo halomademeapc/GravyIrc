@@ -188,7 +188,7 @@ namespace GravyIrc
 
             var serverMessage = IrcMessage.Create(parsedIRCMessage);
 
-            serverMessage?.TriggerEvent(EventHub);
+            EventHub.Trigger(serverMessage);
         }
 
         /// <summary>
