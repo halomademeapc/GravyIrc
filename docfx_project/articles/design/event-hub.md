@@ -17,6 +17,7 @@ myClient.EventHub.Subscribe<PrivateMessage>((client, args) => Console.WriteLine(
 
 ### Registering Additional Message Types
 If the type of message you want to listen for isn't in GravyIrc yet, open a pull request!  Please open a pull request :)
+
 If you want to extend things on your end, I've made it easy to do that was well.  You'll need a class that implements [IServerMessage](/api/GravyIrc.Messages.IServerMessage.html) and is decorated with a [ServerMessageAttribute](/api/GravyIrc.Attributes.ServerMessageAttribute.html).
 ```csharp
 [ServerMessage("POTATO")]
@@ -33,3 +34,8 @@ myClient.EventHub.Subscribe<PotatoMessage>((client, args) => Console.WriteLine("
 ```
 
 After that you should be good to go!
+
+If you don't want to use the annotation to specify command, overloads are provided on IrcMessage.
+```csharp
+IrcMessage.RegisterServerMessageType<CarrotMessage>("CARROT");
+```
