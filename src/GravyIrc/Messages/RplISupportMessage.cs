@@ -16,7 +16,7 @@ namespace GravyIrc.Messages
 
         public void TriggerEvent(EventHub eventHub)
         {
-            eventHub.OnRplISupport(new IrcMessageEventArgs<RplISupportMessage>(this));
+            eventHub.Trigger(this);
         }
     }
 }

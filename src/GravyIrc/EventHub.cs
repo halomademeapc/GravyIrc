@@ -1,5 +1,6 @@
 ﻿using GravyIrc.Messages;
 using System;
+using System.Collections.Generic;
 
 namespace GravyIrc
 {
@@ -9,149 +10,82 @@ namespace GravyIrc
     public class EventHub
     {
         private readonly Client client;
+        private readonly Dictionary<Type, object> eventHandlers = new Dictionary<Type, object>();
 
         internal EventHub(Client client)
         {
             this.client = client;
         }
 
-        /// <summary>
-        /// Indicates that we are properly registered on the server
-        /// It happens when the server sends Replies 001 to 004 to a user upon successful registration
-        /// </summary>
-        public event EventHandler RegistrationCompleted;
-        internal void OnRegistrationCompleted()
+        private ServerMessageEventHandler<TMessage> GetHandler<TMessage>() where TMessage : IrcMessage, IServerMessage
         {
-            RegistrationCompleted?.Invoke(client, EventArgs.Empty);
+            var messageType = typeof(TMessage);
+            if (eventHandlers.ContainsKey(messageType))
+            {
+                return (eventHandlers[messageType] as ServerMessageEventHandler<TMessage>);
+            }
+
+            var handler = new ServerMessageEventHandler<TMessage>(client);
+            eventHandlers[messageType] = handler;
+            return handler;
         }
 
         /// <summary>
-        /// Indicates that we received a PING message from the server
+        /// Subscribe to incoming messages
         /// </summary>
-        /// <remarks>The client automatically sends a PONG message response</remarks>
-        public event IrcMessageEventHandler<PingMessage> Ping;
-        internal void OnPing(IrcMessageEventArgs<PingMessage> e)
+        /// <typeparam name="TMessage">Type of message to subscribe to</typeparam>
+        /// <param name="handler">Action to take when message is received</param>
+        public void Subscribe<TMessage>(IrcMessageEventHandler<TMessage> handler) where TMessage : IrcMessage, IServerMessage
         {
-            Ping?.Invoke(client, e);
+            var @event = GetHandler<TMessage>();
+            @event.Received += handler;
         }
 
         /// <summary>
-        /// Indicates that we received a PRIVMSG message and provides you a PrivMsgMessage object
+        /// Unsubscribe from incoming messages
         /// </summary>
-        public event IrcMessageEventHandler<PrivateMessage> PrivMsg;
-        internal void OnPrivMsg(IrcMessageEventArgs<PrivateMessage> e)
+        /// <typeparam name="TMessage">Type of message to remove subscription on</typeparam>
+        /// <param name="handler">Action to remove</param>
+        public void Unsubscribe<TMessage>(IrcMessageEventHandler<TMessage> handler) where TMessage : IrcMessage, IServerMessage
         {
-            PrivMsg?.Invoke(client, e);
+            var @event = GetHandler<TMessage>();
+            @event.Received -= handler;
         }
 
         /// <summary>
-        /// Indicates that we received a NOTICE message and provides you a NoticeMessage object
+        /// Trigger event handlers for an incoming message
         /// </summary>
-        public event IrcMessageEventHandler<NoticeMessage> Notice;
-        internal void OnNotice(IrcMessageEventArgs<NoticeMessage> e)
+        /// <typeparam name="TMessage">Type of message</typeparam>
+        /// <param name="args">Information about incoming message</param>
+        public void Trigger<TMessage>(IrcMessageEventArgs<TMessage> args) where TMessage : IrcMessage, IServerMessage
         {
-            Notice?.Invoke(client, e);
+            GetHandler<TMessage>()?.OnReceived(args);
         }
 
         /// <summary>
-        /// Indicates that some peer changed his Nickname
+        /// Trigger event handlers for an incoming message
         /// </summary>
-        public event IrcMessageEventHandler<NickMessage> Nick;
-        internal void OnNick(IrcMessageEventArgs<NickMessage> e)
+        /// <typeparam name="TMessage">Type of message</typeparam>
+        /// <param name="message">Incoming message</param>
+        public void Trigger<TMessage>(TMessage message) where TMessage : IrcMessage, IServerMessage
         {
-            Nick?.Invoke(client, e);
+            Trigger(new IrcMessageEventArgs<TMessage>(message));
         }
 
-        /// <summary>
-        /// Indicates that we received a 001 (RPL_WELCOME) numeric reply message
-        /// </summary>
-        public event IrcMessageEventHandler<RplWelcomeMessage> RplWelcome;
-        internal void OnRplWelcome(IrcMessageEventArgs<RplWelcomeMessage> e)
+        private class ServerMessageEventHandler<TMessage> where TMessage : IrcMessage, IServerMessage
         {
-            RplWelcome?.Invoke(client, e);
-            OnRegistrationCompleted();
-        }
+            private readonly Client client;
 
-        /// <summary>
-        /// Indicates that we received a 002 (RPL_YOURHOST) numeric reply message
-        /// </summary>
-        public event IrcMessageEventHandler<RplYourHostMessage> RplYourHost;
-        internal void OnRplYourHost(IrcMessageEventArgs<RplYourHostMessage> e)
-        {
-            RplYourHost?.Invoke(client, e);
-        }
+            internal ServerMessageEventHandler(Client client)
+            {
+                this.client = client;
+            }
 
-        /// <summary>
-        /// Indicates that we received a 003 (RPL_CREATED) numeric reply message
-        /// </summary>
-        public event IrcMessageEventHandler<RplCreatedMessage> RplCreated;
-        internal void OnRplCreated(IrcMessageEventArgs<RplCreatedMessage> e)
-        {
-            RplCreated?.Invoke(client, e);
-        }
-
-        /// <summary>
-        /// Indicates that we received a 004 (RPL_MYINFO) numeric reply message
-        /// </summary>
-        public event IrcMessageEventHandler<RplMyInfoMessage> RplMyInfo;
-        internal void OnRplMyInfo(IrcMessageEventArgs<RplMyInfoMessage> e)
-        {
-            RplMyInfo?.Invoke(client, e);
-        }
-
-        /// <summary>
-        /// Indicates that we received a 005 (RPL_ISUPPORT) numeric reply message
-        /// </summary>
-        public event IrcMessageEventHandler<RplISupportMessage> RplISupport;
-        internal void OnRplISupport(IrcMessageEventArgs<RplISupportMessage> e)
-        {
-            RplISupport?.Invoke(client, e);
-        }
-
-        /// <summary>
-        /// Indicates that some peer has joined a channel
-        /// </summary>
-        public event IrcMessageEventHandler<JoinMessage> Join;
-        internal void OnJoin(IrcMessageEventArgs<JoinMessage> e)
-        {
-            Join?.Invoke(client, e);
-        }
-
-        /// <summary>
-        /// Indicates that some peer has left a channel
-        /// </summary>
-        public event IrcMessageEventHandler<PartMessage> Part;
-        internal void OnPart(IrcMessageEventArgs<PartMessage> e)
-        {
-            Part?.Invoke(client, e);
-        }
-
-        /// <summary>
-        /// Indicates we received a 353 (RPL_NAMREPLY) numeric reply
-        /// which contains the list of all users in a channel
-        /// </summary>
-        public event IrcMessageEventHandler<RplNamReplyMessage> RplNamReply;
-        internal void OnRplNamReply(IrcMessageEventArgs<RplNamReplyMessage> e)
-        {
-            RplNamReply?.Invoke(client, e);
-        }
-
-        /// <summary>
-        /// Indicates that some peer has quit the server
-        /// </summary>
-        public event IrcMessageEventHandler<QuitMessage> Quit;
-        internal void OnQuit(IrcMessageEventArgs<QuitMessage> e)
-        {
-            Quit?.Invoke(client, e);
-        }
-
-        /// <summary>
-        /// Indicates that the bot has been kicked from a channel
-        /// </summary>
-        public event IrcMessageEventHandler<KickMessage> Kick;
-        internal void OnKick(IrcMessageEventArgs<KickMessage> e)
-        {
-            Kick?.Invoke(client, e);
+            public event IrcMessageEventHandler<TMessage> Received;
+            internal void OnReceived(IrcMessageEventArgs<TMessage> args)
+            {
+                Received?.Invoke(client, args);
+            }
         }
     }
 }

@@ -13,7 +13,7 @@ namespace GravyIrc.Tests
             collection.Add(user);
             var user2 = collection.GetUser("Test");
 
-            Assert.Equal(1, collection.Count);
+            Assert.Single(collection);
             Assert.Same(user, user2);
         }
     }

@@ -24,7 +24,7 @@ namespace GravyIrc.Messages
 
         public void TriggerEvent(EventHub eventHub)
         {
-            eventHub.OnPing(new IrcMessageEventArgs<PingMessage>(this));
+            eventHub.Trigger(this);
         }
     }
 }
