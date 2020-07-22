@@ -153,7 +153,7 @@ namespace GravyIrc.Tests
             var to = "Wiz";
             var message = "Hello are you receiving this message ?";
             var raw = $":{from} PRIVMSG {to} :{message}";
-            IrcMessageEventArgs<PrivMsgMessage> args = null;
+            IrcMessageEventArgs<PrivateMessage> args = null;
 
             client.EventHub.PrivMsg += (c, a) => args = a;
 
@@ -172,7 +172,7 @@ namespace GravyIrc.Tests
             var to = "Wiz";
             var message = "Hello";
             var raw = $":{from} PRIVMSG {to} {message}";
-            IrcMessageEventArgs<PrivMsgMessage> args = null;
+            IrcMessageEventArgs<PrivateMessage> args = null;
 
             client.EventHub.PrivMsg += (c, a) => args = a;
 

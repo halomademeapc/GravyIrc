@@ -35,8 +35,8 @@ namespace GravyIrc
         /// <summary>
         /// Indicates that we received a PRIVMSG message and provides you a PrivMsgMessage object
         /// </summary>
-        public event IrcMessageEventHandler<PrivMsgMessage> PrivMsg;
-        internal void OnPrivMsg(IrcMessageEventArgs<PrivMsgMessage> e)
+        public event IrcMessageEventHandler<PrivateMessage> PrivMsg;
+        internal void OnPrivMsg(IrcMessageEventArgs<PrivateMessage> e)
         {
             PrivMsg?.Invoke(client, e);
         }

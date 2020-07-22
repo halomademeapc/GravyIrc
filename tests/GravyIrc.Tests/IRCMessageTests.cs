@@ -37,7 +37,7 @@ namespace GravyIrc.Tests
             var parsedIRCMessage = new ParsedIrcMessage($":{prefix} {command} {target} :{text}");
             var ircMessage = IrcMessage.Create(parsedIRCMessage);
 
-            var privMsgMessage = Assert.IsType<PrivMsgMessage>(ircMessage);
+            var privMsgMessage = Assert.IsType<PrivateMessage>(ircMessage);
 
             Assert.Equal(prefix, privMsgMessage.Prefix.Raw);
             Assert.Equal(target, privMsgMessage.To);
@@ -49,7 +49,7 @@ namespace GravyIrc.Tests
         {
             var target = "WiZ";
             var message = "Are you receiving this message ?";
-            var privMsgMessage = new PrivMsgMessage(target, message);
+            var privMsgMessage = new PrivateMessage(target, message);
 
             Assert.Equal($"PRIVMSG {target} :{message}", privMsgMessage.ToString());
         }
