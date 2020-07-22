@@ -203,7 +203,7 @@ namespace GravyIrc
 
             if (!string.IsNullOrWhiteSpace(password))
             {
-                await SendAsync(new PassMessage(password));
+                await SendAsync(new PasswordMessage(password));
             }
             await SendAsync(new NickMessage(User.Nick));
             await SendAsync(new UserMessage(User.Nick, User.RealName));
