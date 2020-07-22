@@ -7,6 +7,7 @@ jobs:
       install: dotnet restore
       script: dotnet build
     - stage: "Generate Documentation"
+      if: branch = master
       install:
         - dotnet restore
         - nuget install docfx.console  -Version $DOCFX_VERSION
@@ -22,8 +23,6 @@ jobs:
         on:
           branch: 
           - master
-          - develop
-          - feature/docfx
     - stage: "Run Tests"
       install: dotnet restore
       script: dotnet test tests/GravyIrc.Tests/GravyIrc.Tests.csproj
