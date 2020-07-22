@@ -23,10 +23,6 @@ If you want to extend things on your end, I've made it easy to do that was well.
 public class PotatoMessage : IrcMessage, IServerMessage
 {
     ...
-    public void TriggerEvent(EventHub eventHub)
-    {
-        eventHub.Trigger(this);
-    }
 }
 ```
 

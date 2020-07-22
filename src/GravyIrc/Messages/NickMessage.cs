@@ -21,10 +21,5 @@ namespace GravyIrc.Messages
         }
 
         public IEnumerable<string> Tokens => new[] { "NICK", NewNick };
-
-        public void TriggerEvent(EventHub eventHub)
-        {
-            eventHub.Trigger(this);
-        }
     }
 }
