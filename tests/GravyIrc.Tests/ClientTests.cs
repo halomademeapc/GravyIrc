@@ -11,12 +11,12 @@ namespace GravyIrc.Tests
     {
         private static User FakeUser = new User("test", "test");
         private readonly Mock<IConnection> mockConnection;
-        private readonly Client client;
+        private readonly IrcClient client;
 
         public ClientTests()
         {
             mockConnection = new Mock<IConnection>();
-            client = new Client(FakeUser, mockConnection.Object);
+            client = new IrcClient(FakeUser, mockConnection.Object);
         }
 
         [Fact]
@@ -99,7 +99,7 @@ namespace GravyIrc.Tests
             var nick = "guest";
             var realName = "Ronnie Reagan";
             var user = new User(nick, realName);
-            var client = new Client(user, mockConnection.Object);
+            var client = new IrcClient(user, mockConnection.Object);
 
             await Task.Run(() => client.ConnectAsync("localhost", 6667));
 
@@ -114,7 +114,7 @@ namespace GravyIrc.Tests
             var nick = "guest";
             var realName = "Ronnie Reagan";
             var user = new User(nick, realName);
-            var client = new Client(user, password, mockConnection.Object);
+            var client = new IrcClient(user, password, mockConnection.Object);
 
             await Task.Run(() => client.ConnectAsync("localhost", 6667));
 
@@ -644,7 +644,7 @@ namespace GravyIrc.Tests
             Assert.Equal("Nick", propertyName);
         }
 
-        private void RaiseDataReceived(Mock<IConnection> mockConnection, Client client, string raw)
+        private void RaiseDataReceived(Mock<IConnection> mockConnection, IrcClient client, string raw)
         {
             mockConnection.Raise(c => c.DataReceived += null, client, new DataReceivedEventArgs(raw));
         }
