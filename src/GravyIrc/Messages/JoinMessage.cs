@@ -56,6 +56,12 @@ namespace GravyIrc.Messages
         /// <summary>
         /// Creates a new instance for an outbound message
         /// </summary>
+        /// <param name="channels">Channels to join</param>
+        public JoinMessage(params string[] channels) => new JoinMessage(channels.AsEnumerable());
+
+        /// <summary>
+        /// Creates a new instance for an outbound message
+        /// </summary>
         /// <param name="channels">Channels to join, in name-password pairs</param>
         public JoinMessage(IEnumerable<(string, string)> channels)
         {

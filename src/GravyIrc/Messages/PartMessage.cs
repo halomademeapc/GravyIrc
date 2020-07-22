@@ -1,5 +1,6 @@
 ﻿using GravyIrc.Attributes;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GravyIrc.Messages
 {
@@ -48,6 +49,12 @@ namespace GravyIrc.Messages
         {
             this.channels = string.Join(",", channels);
         }
+
+        /// <summary>
+        /// Creates a new instance for an outbound message
+        /// </summary>
+        /// <param name="channels">Channels to leave</param>
+        public PartMessage(params string[] channels) => new PartMessage(channels.AsEnumerable());
 
         public IEnumerable<string> Tokens => new[] { "PART", channels };
 
