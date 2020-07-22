@@ -54,7 +54,7 @@ namespace GravyIrc.Messages
 
         public void TriggerEvent(EventHub eventHub)
         {
-            eventHub.OnPrivMsg(new IrcMessageEventArgs<PrivateMessage>(this));
+            eventHub.TriggerEvent(new IrcMessageEventArgs<PrivateMessage>(this));
         }
 
         /// <summary>
