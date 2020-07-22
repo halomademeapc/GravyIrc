@@ -8,6 +8,11 @@ namespace GravyIrc
     /// </summary>
     public class ChannelCollection : ObservableCollection<Channel>
     {
+        /// <summary>
+        /// Get a channel
+        /// </summary>
+        /// <param name="name">Name of channel</param>
+        /// <returns>Channel, if joined</returns>
         public Channel GetChannel(string name)
         {
             var channel = Items.FirstOrDefault(c => c.Name == name);

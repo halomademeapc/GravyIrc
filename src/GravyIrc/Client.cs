@@ -96,7 +96,7 @@ namespace GravyIrc
             user.Nick = e.IrcMessage.NewNick;
         }
 
-        private void EventHub_PrivMsg(Client client, IrcMessageEventArgs<PrivMsgMessage> e)
+        private void EventHub_PrivMsg(Client client, IrcMessageEventArgs<PrivateMessage> e)
         {
             var user = Peers.GetUser(e.IrcMessage.From);
             var message = new ChatMessage(user, e.IrcMessage.Message);
@@ -203,7 +203,7 @@ namespace GravyIrc
 
             if (!string.IsNullOrWhiteSpace(password))
             {
-                await SendAsync(new PassMessage(password));
+                await SendAsync(new PasswordMessage(password));
             }
             await SendAsync(new NickMessage(User.Nick));
             await SendAsync(new UserMessage(User.Nick, User.RealName));

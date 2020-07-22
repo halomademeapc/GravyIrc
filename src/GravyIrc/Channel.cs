@@ -8,9 +8,20 @@ namespace GravyIrc
     /// </summary>
     public class Channel
     {
+        /// <summary>
+        /// Name of channel
+        /// </summary>
+        /// <remarks>Typically prefixed with a '#'</remarks>
         public string Name { get; }
 
+        /// <summary>
+        /// Collection of users currently in channel
+        /// </summary>
         public ObservableCollection<ChannelUser> Users { get; }
+
+        /// <summary>
+        /// Messages received in channel since client connected
+        /// </summary>
         public ObservableCollection<ChatMessage> Messages { get; }
 
         public Channel(string name)
@@ -32,6 +43,11 @@ namespace GravyIrc
                 Users.Remove(user);
         }
 
+        /// <summary>
+        /// Get a user in the channel
+        /// </summary>
+        /// <param name="nick">Nick of user</param>
+        /// <returns>User, if found</returns>
         public ChannelUser GetUser(string nick) => Users.FirstOrDefault(u => u.Nick.ToLower() == nick.ToLower());
     }
 }

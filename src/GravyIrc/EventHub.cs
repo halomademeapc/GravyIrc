@@ -3,6 +3,9 @@ using System;
 
 namespace GravyIrc
 {
+    /// <summary>
+    /// Hub for all events on IRC client that can be subscribed to
+    /// </summary>
     public class EventHub
     {
         private readonly Client client;
@@ -24,8 +27,8 @@ namespace GravyIrc
 
         /// <summary>
         /// Indicates that we received a PING message from the server
-        /// The client automatically sends a PONG message response
         /// </summary>
+        /// <remarks>The client automatically sends a PONG message response</remarks>
         public event IrcMessageEventHandler<PingMessage> Ping;
         internal void OnPing(IrcMessageEventArgs<PingMessage> e)
         {
@@ -35,8 +38,8 @@ namespace GravyIrc
         /// <summary>
         /// Indicates that we received a PRIVMSG message and provides you a PrivMsgMessage object
         /// </summary>
-        public event IrcMessageEventHandler<PrivMsgMessage> PrivMsg;
-        internal void OnPrivMsg(IrcMessageEventArgs<PrivMsgMessage> e)
+        public event IrcMessageEventHandler<PrivateMessage> PrivMsg;
+        internal void OnPrivMsg(IrcMessageEventArgs<PrivateMessage> e)
         {
             PrivMsg?.Invoke(client, e);
         }

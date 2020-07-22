@@ -9,6 +9,11 @@ namespace GravyIrc
     /// </summary>
     public class UserCollection : ObservableCollection<User>
     {
+        /// <summary>
+        /// Get a user
+        /// </summary>
+        /// <param name="nick">Nick of user</param>
+        /// <returns></returns>
         public User GetUser(string nick)
         {
             var user = Items.FirstOrDefault(u => u.Nick == nick);

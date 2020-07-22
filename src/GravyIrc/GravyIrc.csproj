@@ -18,6 +18,7 @@
     <Version>0.1.0-alpha</Version>
     <Product>GravyIrc</Product>
     <PackageReleaseNotes>Initial release; testing travis deploy</PackageReleaseNotes>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
 </Project>
