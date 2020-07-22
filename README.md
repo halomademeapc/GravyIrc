@@ -22,8 +22,6 @@ public async void TestClient() {
     client.EventHub.Subscribe<RplWelcomeMessage>(Client_OnRegistered);
     client.EventHub.Subscribe<PrivateMessage>((client, args) => Console.WriteLine(args.IrcMessage.Message));
     await client.ConnectAsync(config.Server, config.Port);
-    await client.SendAsync(new NickMessage(config.Nick));
-    await client.SendAsync(new UserMessage(config.Nick, config.Identity));
 }
 
 private async void Client_OnRegistered(object sender, EventArgs e) {

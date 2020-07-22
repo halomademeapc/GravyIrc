@@ -1,8 +1,18 @@
 - name: Introduction
   href: intro.md
 - name: Design
-  href: design/
+  items: 
+    - name: Event Hub
+      href: design-event-hub.md
 - name: Guides
-  href: guides/
+  items:
+    - name: Connecting
+      href: guide-connect.md
+    - name: Listen for Messages
+      href: guide-listen.md
+    - name: Send Messages
+      href: guide-send.md
+    - name: Set Mode
+      href: guide-mode.md
 - name: Examples
   href: examples.md
