@@ -24,6 +24,7 @@ jobs:
           branch: 
           - master
     - stage: "Run Tests"
+      if: branch != master
       install: dotnet restore
       script: dotnet test tests/GravyIrc.Tests/GravyIrc.Tests.csproj --verbosity detailed
     - stage: "Publish to NuGet"
