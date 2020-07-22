@@ -17,28 +17,28 @@ namespace GravyIrc
             this.client = client;
         }
 
-        public IrcMessageEventHandler<TMessage> GetEventHandler<TMessage>() where TMessage : IrcMessage, IServerMessage
+        private ServerMessageEventHandler<TMessage> GetHandler<TMessage>() where TMessage : IrcMessage, IServerMessage
         {
             var messageType = typeof(TMessage);
             if (eventHandlers.ContainsKey(messageType))
             {
-                return (eventHandlers[messageType] as ServerMessageEventHandler<TMessage>).Received;
+                return (eventHandlers[messageType] as ServerMessageEventHandler<TMessage>);
             }
 
             var handler = new ServerMessageEventHandler<TMessage>(client);
             eventHandlers[messageType] = handler;
-            return handler.Received;
+            return handler;
         }
 
         public void AddEventListener<TMessage>(Action<Client, IrcMessageEventArgs<TMessage>> handler) where TMessage : IrcMessage, IServerMessage
         {
-            var @event = GetEventHandler<TMessage>();
-            @event += (client, args) => handler(client, args);
+            var @event = GetHandler<TMessage>();
+            @event.Received += (client, args) => handler(client, args);
         }
 
         public void TriggerEvent<TMessage>(IrcMessageEventArgs<TMessage> args) where TMessage : IrcMessage, IServerMessage
         {
-            GetEventHandler<TMessage>()?.Invoke(client, args);
+            GetHandler<TMessage>()?.Received?.Invoke(client, args);
         }
 
         private class ServerMessageEventHandler<TMessage> where TMessage : IrcMessage, IServerMessage
@@ -50,7 +50,7 @@ namespace GravyIrc
                 this.client = client;
             }
 
-            public IrcMessageEventHandler<TMessage> Received;
+            public IrcMessageEventHandler<TMessage> Received = (sender, args) => { };
             internal void OnReceived(IrcMessageEventArgs<TMessage> args)
             {
                 Received?.Invoke(client, args);
