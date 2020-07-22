@@ -34,7 +34,7 @@ namespace GravyIrc.Messages
 
         public void TriggerEvent(EventHub eventHub)
         {
-            eventHub.Trigger(new IrcMessageEventArgs<RplNamReplyMessage>(this));
+            eventHub.Trigger(this);
         }
     }
 }

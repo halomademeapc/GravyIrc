@@ -60,7 +60,7 @@ namespace GravyIrc.Messages
 
         public void TriggerEvent(EventHub eventHub)
         {
-            eventHub.Trigger(new IrcMessageEventArgs<PartMessage>(this));
+            eventHub.Trigger(this);
         }
     }
 }

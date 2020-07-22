@@ -48,7 +48,7 @@ namespace GravyIrc.Messages
 
         public void TriggerEvent(EventHub eventHub)
         {
-            eventHub.Trigger(new IrcMessageEventArgs<NoticeMessage>(this));
+            eventHub.Trigger(this);
         }
 
         public IEnumerable<string> Tokens => new[] { "NOTICE", Target, Message };

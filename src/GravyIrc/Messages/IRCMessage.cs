@@ -1,4 +1,5 @@
-﻿using GravyIrc.Extensions;
+﻿using GravyIrc.Attributes;
+using GravyIrc.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,29 @@ namespace GravyIrc.Messages
                 .Where(t => interfaceType.IsAssignableFrom(t))
                 .Where(t => t.HasCommand())
                 .ToDictionary(t => t.GetCommand(), t => t);
+        }
+
+        /// <summary>
+        /// Register an additional server message type
+        /// </summary>
+        /// <remarks>Used to extend built-in message types</remarks>
+        /// <typeparam name="TMessage">Type of message to add</typeparam>
+        public static void RegisterServerMessageType<TMessage>() where TMessage : IServerMessage => RegisterServerMessageType(typeof(TMessage));
+
+        /// <summary>
+        /// Register an additional server message type
+        /// </summary>
+        /// <remarks>Used to extend built-in message types</remarks>
+        /// <param name="messageType">Type of message to add</param>
+        public static void RegisterServerMessageType(Type messageType)
+        {
+            var interfaceType = typeof(IServerMessage);
+            if (!interfaceType.IsAssignableFrom(messageType))
+                throw new ArgumentException($"{messageType.FullName} must implement {interfaceType.FullName}");
+            if (!messageType.HasCommand())
+                throw new ArgumentException($"{messageType.FullName} must be annotated with {typeof(ServerMessageAttribute).FullName}");
+
+            ServerMessageTypes[messageType.GetCommand()] = messageType;
         }
 
         public static IServerMessage Create(ParsedIrcMessage parsedMessage)
