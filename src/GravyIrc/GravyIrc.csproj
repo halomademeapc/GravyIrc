@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>IRC client library for .NET Standard 2.0.  Forked from NetIRC.</Description>
+    <Description>IRC client library for .NET Standard 2.0.  Forked from NetIRC and beefed up a little.</Description>
     <Copyright></Copyright>
     <VersionPrefix>0.1.1</VersionPrefix>
     <Authors>Alex Griffith</Authors>
@@ -15,10 +15,18 @@
     <DebugType Condition="$(codecov) != ''">full</DebugType>
     <DebugType Condition="$(codecov) == ''">portable</DebugType>
     <DebugSymbols>True</DebugSymbols>
-    <Version>0.1.0-alpha2</Version>
+    <Version>1.0.0</Version>
     <Product>GravyIrc</Product>
-    <PackageReleaseNotes>Initial release; testing travis deploy</PackageReleaseNotes>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\docfx_project\logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

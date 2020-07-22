@@ -10,10 +10,10 @@ namespace GravyIrc
     /// </summary>
     public class EventHub
     {
-        private readonly Client client;
+        private readonly IrcClient client;
         private readonly Dictionary<Type, object> eventHandlers = new Dictionary<Type, object>();
 
-        internal EventHub(Client client)
+        internal EventHub(IrcClient client)
         {
             this.client = client;
         }
@@ -99,9 +99,9 @@ namespace GravyIrc
 
         private class ServerMessageEventHandler<TMessage> where TMessage : IrcMessage, IServerMessage
         {
-            private readonly Client client;
+            private readonly IrcClient client;
 
-            internal ServerMessageEventHandler(Client client)
+            internal ServerMessageEventHandler(IrcClient client)
             {
                 this.client = client;
             }

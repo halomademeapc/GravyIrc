@@ -18,9 +18,9 @@ dotnet add package GravyIrc
 ```csharp
 public async void TestClient() {
     var user = new User(config.Nick, config.Identity);
-    var client = new Client(user, new TcpClientConnection());
-    client.EventHub.RegistrationCompleted += Client_OnRegistered;
-    client.OnRawDataReceived += Client_OnRawDataReceived;
+    var client = new IrcClient(user, new TcpClientConnection());
+    client.EventHub.Subscribe<RplWelcomeMessage>(Client_OnRegistered);
+    client.EventHub.Subscribe<PrivateMessage>((client, args) => Console.WriteLine(args.IrcMessage.Message));
     await client.ConnectAsync(config.Server, config.Port);
     await client.SendAsync(new NickMessage(config.Nick));
     await client.SendAsync(new UserMessage(config.Nick, config.Identity));
@@ -32,9 +32,5 @@ private async void Client_OnRegistered(object sender, EventArgs e) {
     }
     await client.SendAsync(new ModeMessage(config.Nick, "+B"));
     await JoinDefaultChannels();
-}
-
-private void Client_OnRawDataReceived(Client client, string rawData) {
-    Console.WriteLine(rawData);
 }
 ```

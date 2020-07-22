@@ -9,7 +9,7 @@ namespace GravyIrc
     /// <summary>
     /// The NetIRC IRC client
     /// </summary>
-    public class Client : IDisposable
+    public class IrcClient : IDisposable
     {
         private readonly IConnection connection;
 
@@ -57,7 +57,7 @@ namespace GravyIrc
         /// </summary>
         /// <param name="user">User who wishes to connect to the server</param>
         /// <param name="connection">IConnection implementation</param>
-        public Client(User user, IConnection connection)
+        public IrcClient(User user, IConnection connection)
         {
             User = user;
 
@@ -72,7 +72,7 @@ namespace GravyIrc
             InitializeDefaultEventHubEvents();
         }
 
-        public Client(User user, string password, IConnection connection)
+        public IrcClient(User user, string password, IConnection connection)
             : this(user, connection)
         {
             this.password = password;
@@ -90,13 +90,13 @@ namespace GravyIrc
             EventHub.Subscribe<NickMessage>(EventHub_Nick);
         }
 
-        private void EventHub_Nick(Client client, IrcMessageEventArgs<NickMessage> e)
+        private void EventHub_Nick(IrcClient client, IrcMessageEventArgs<NickMessage> e)
         {
             var user = Peers.GetUser(e.IrcMessage.OldNick);
             user.Nick = e.IrcMessage.NewNick;
         }
 
-        private void EventHub_PrivMsg(Client client, IrcMessageEventArgs<PrivateMessage> e)
+        private void EventHub_PrivMsg(IrcClient client, IrcMessageEventArgs<PrivateMessage> e)
         {
             var user = Peers.GetUser(e.IrcMessage.From);
             var message = new ChatMessage(user, e.IrcMessage.Message);
@@ -113,7 +113,7 @@ namespace GravyIrc
             }
         }
 
-        private void EventHub_RplNamReply(Client client, IrcMessageEventArgs<RplNamReplyMessage> e)
+        private void EventHub_RplNamReply(IrcClient client, IrcMessageEventArgs<RplNamReplyMessage> e)
         {
             var channel = Channels.GetChannel(e.IrcMessage.Channel);
             foreach (var nick in e.IrcMessage.Nicks)
@@ -126,7 +126,7 @@ namespace GravyIrc
             }
         }
 
-        private void EventHub_Quit(Client client, IrcMessageEventArgs<QuitMessage> e)
+        private void EventHub_Quit(IrcClient client, IrcMessageEventArgs<QuitMessage> e)
         {
             foreach (var channel in Channels)
             {
@@ -134,7 +134,7 @@ namespace GravyIrc
             }
         }
 
-        private void EventHub_Kick(Client client, IrcMessageEventArgs<KickMessage> e)
+        private void EventHub_Kick(IrcClient client, IrcMessageEventArgs<KickMessage> e)
         {
             var channel = Channels.FirstOrDefault(c => c.Name == e.IrcMessage.Channel);
             if (channel != null)
@@ -150,13 +150,13 @@ namespace GravyIrc
             }
         }
 
-        private void EventHub_Part(Client client, IrcMessageEventArgs<PartMessage> e)
+        private void EventHub_Part(IrcClient client, IrcMessageEventArgs<PartMessage> e)
         {
             var channel = Channels.GetChannel(e.IrcMessage.Channel);
             channel.RemoveUser(e.IrcMessage.Nick);
         }
 
-        private void EventHub_Join(Client client, IrcMessageEventArgs<JoinMessage> e)
+        private void EventHub_Join(IrcClient client, IrcMessageEventArgs<JoinMessage> e)
         {
             var channel = Channels.GetChannel(e.IrcMessage.Channel);
             if (e.IrcMessage.Nick != User.Nick)
