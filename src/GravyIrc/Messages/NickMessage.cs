@@ -24,7 +24,7 @@ namespace GravyIrc.Messages
 
         public void TriggerEvent(EventHub eventHub)
         {
-            eventHub.TriggerEvent(new IrcMessageEventArgs<NickMessage>(this));
+            eventHub.Trigger(new IrcMessageEventArgs<NickMessage>(this));
         }
     }
 }

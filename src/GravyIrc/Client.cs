@@ -80,14 +80,14 @@ namespace GravyIrc
 
         private void InitializeDefaultEventHubEvents()
         {
-            EventHub.AddEventListener<PingMessage>(EventHub_Ping);
-            EventHub.AddEventListener<JoinMessage>(EventHub_Join);
-            EventHub.AddEventListener<PartMessage>(EventHub_Part);
-            EventHub.AddEventListener<QuitMessage>(EventHub_Quit);
-            EventHub.AddEventListener<KickMessage>(EventHub_Kick);
-            EventHub.AddEventListener<PrivateMessage>(EventHub_PrivMsg);
-            EventHub.AddEventListener<RplNamReplyMessage>(EventHub_RplNamReply);
-            EventHub.AddEventListener<NickMessage>(EventHub_Nick);
+            EventHub.Subscribe<PingMessage>(EventHub_Ping);
+            EventHub.Subscribe<JoinMessage>(EventHub_Join);
+            EventHub.Subscribe<PartMessage>(EventHub_Part);
+            EventHub.Subscribe<QuitMessage>(EventHub_Quit);
+            EventHub.Subscribe<KickMessage>(EventHub_Kick);
+            EventHub.Subscribe<PrivateMessage>(EventHub_PrivMsg);
+            EventHub.Subscribe<RplNamReplyMessage>(EventHub_RplNamReply);
+            EventHub.Subscribe<NickMessage>(EventHub_Nick);
         }
 
         private void EventHub_Nick(Client client, IrcMessageEventArgs<NickMessage> e)

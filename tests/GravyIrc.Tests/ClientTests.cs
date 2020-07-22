@@ -86,7 +86,7 @@ namespace GravyIrc.Tests
             var raw = "PING :xyz.com";
             IrcMessageEventArgs<PingMessage> args = null;
 
-            client.EventHub.AddEventListener<PingMessage>((c, a) => args = a);
+            client.EventHub.Subscribe<PingMessage>((c, a) => args = a);
 
             RaiseDataReceived(mockConnection, client, raw);
 
@@ -155,7 +155,7 @@ namespace GravyIrc.Tests
             var raw = $":{from} PRIVMSG {to} :{message}";
             IrcMessageEventArgs<PrivateMessage> args = null;
 
-            client.EventHub.AddEventListener<PrivateMessage>((c, a) => args = a);
+            client.EventHub.Subscribe<PrivateMessage>((c, a) => args = a);
 
             RaiseDataReceived(mockConnection, client, raw);
 
@@ -174,7 +174,7 @@ namespace GravyIrc.Tests
             var raw = $":{from} PRIVMSG {to} {message}";
             IrcMessageEventArgs<PrivateMessage> args = null;
 
-            client.EventHub.AddEventListener<PrivateMessage>((c, a) => args = a);
+            client.EventHub.Subscribe<PrivateMessage>((c, a) => args = a);
 
             RaiseDataReceived(mockConnection, client, raw);
 
@@ -257,7 +257,7 @@ namespace GravyIrc.Tests
             var raw = $":{from} NOTICE {to} :{message}";
             IrcMessageEventArgs<NoticeMessage> args = null;
 
-            client.EventHub.AddEventListener<NoticeMessage>((c, a) => args = a);
+            client.EventHub.Subscribe<NoticeMessage>((c, a) => args = a);
 
             RaiseDataReceived(mockConnection, client, raw);
 
@@ -275,7 +275,7 @@ namespace GravyIrc.Tests
             var raw = $":{from} NOTICE {to} {message}";
             IrcMessageEventArgs<NoticeMessage> args = null;
 
-            client.EventHub.AddEventListener<NoticeMessage>((c, a) => args = a);
+            client.EventHub.Subscribe<NoticeMessage>((c, a) => args = a);
 
             RaiseDataReceived(mockConnection, client, raw);
 
@@ -291,7 +291,7 @@ namespace GravyIrc.Tests
             var raw = $":irc.server.net 001 NetIRC :{text}";
             IrcMessageEventArgs<RplWelcomeMessage> args = null;
 
-            client.EventHub.AddEventListener<RplWelcomeMessage>((c, a) => args = a);
+            client.EventHub.Subscribe<RplWelcomeMessage>((c, a) => args = a);
 
             RaiseDataReceived(mockConnection, client, raw);
 
@@ -312,7 +312,7 @@ namespace GravyIrc.Tests
             var raw = $":irc.server.net 002 NetIRC :{text}";
             IrcMessageEventArgs<RplYourHostMessage> args = null;
 
-            client.EventHub.AddEventListener<RplYourHostMessage>((c, a) => args = a);
+            client.EventHub.Subscribe<RplYourHostMessage>((c, a) => args = a);
 
             RaiseDataReceived(mockConnection, client, raw);
 
@@ -333,7 +333,7 @@ namespace GravyIrc.Tests
             var raw = $":irc.server.net 003 NetIRC :{text}";
             IrcMessageEventArgs<RplCreatedMessage> args = null;
 
-            client.EventHub.AddEventListener<RplCreatedMessage>((c, a) => args = a);
+            client.EventHub.Subscribe<RplCreatedMessage>((c, a) => args = a);
 
             RaiseDataReceived(mockConnection, client, raw);
 
@@ -362,7 +362,7 @@ namespace GravyIrc.Tests
             var raw = $":irc.server.net 004 {string.Join(" ", parameters)}";
             IrcMessageEventArgs<RplMyInfoMessage> args = null;
 
-            client.EventHub.AddEventListener<RplMyInfoMessage>((c, a) => args = a);
+            client.EventHub.Subscribe<RplMyInfoMessage>((c, a) => args = a);
 
             RaiseDataReceived(mockConnection, client, raw);
 
@@ -397,7 +397,7 @@ namespace GravyIrc.Tests
             var raw = $":irc.server.net 005 {string.Join(" ", parameters)} :{text}";
             IrcMessageEventArgs<RplISupportMessage> args = null;
 
-            client.EventHub.AddEventListener<RplISupportMessage>((c, a) => args = a);
+            client.EventHub.Subscribe<RplISupportMessage>((c, a) => args = a);
 
             RaiseDataReceived(mockConnection, client, raw);
 
@@ -426,7 +426,7 @@ namespace GravyIrc.Tests
             var raw = $":{nick} JOIN {channel}";
             IrcMessageEventArgs<JoinMessage> args = null;
 
-            client.EventHub.AddEventListener<JoinMessage>((c, a) => args = a);
+            client.EventHub.Subscribe<JoinMessage>((c, a) => args = a);
 
             RaiseDataReceived(mockConnection, client, raw);
 
@@ -449,7 +449,7 @@ namespace GravyIrc.Tests
             var raw = $":{nick}!~user@x.y.z PART {channel}";
             IrcMessageEventArgs<PartMessage> args = null;
 
-            client.EventHub.AddEventListener<PartMessage>((c, a) => args = a);
+            client.EventHub.Subscribe<PartMessage>((c, a) => args = a);
 
             RaiseDataReceived(mockConnection, client, raw);
 
@@ -499,7 +499,7 @@ namespace GravyIrc.Tests
             var raw = $":irc.server.net 353 NetIRCConsoleClient = {channel} :NetIRCConsoleClient @Fredi_";
             IrcMessageEventArgs<RplNamReplyMessage> args = null;
 
-            client.EventHub.AddEventListener<RplNamReplyMessage>((c, a) => args = a);
+            client.EventHub.Subscribe<RplNamReplyMessage>((c, a) => args = a);
 
             RaiseDataReceived(mockConnection, client, raw);
 
@@ -556,7 +556,7 @@ namespace GravyIrc.Tests
             var raw = $":{nick}!~host@x.y.z QUIT :{message}";
             IrcMessageEventArgs<QuitMessage> args = null;
 
-            client.EventHub.AddEventListener<QuitMessage>((c, a) => args = a);
+            client.EventHub.Subscribe<QuitMessage>((c, a) => args = a);
 
             RaiseDataReceived(mockConnection, client, raw);
 
@@ -584,7 +584,7 @@ namespace GravyIrc.Tests
             var raw = ":irc.server.io 001 netIRCTest :Welcome";
             var completed = false;
 
-            client.EventHub.AddEventListener<RplWelcomeMessage>((c, a) => completed = true);
+            client.EventHub.Subscribe<RplWelcomeMessage>((c, a) => completed = true);
 
             RaiseDataReceived(mockConnection, client, raw);
 
@@ -606,7 +606,7 @@ namespace GravyIrc.Tests
             var raw = $":{oldNick} NICK {newNick}";
             IrcMessageEventArgs<NickMessage> args = null;
 
-            client.EventHub.AddEventListener<NickMessage>((c, a) => args = a);
+            client.EventHub.Subscribe<NickMessage>((c, a) => args = a);
 
             RaiseDataReceived(mockConnection, client, raw);
 

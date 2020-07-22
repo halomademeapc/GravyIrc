@@ -30,15 +30,21 @@ namespace GravyIrc
             return handler;
         }
 
-        public void AddEventListener<TMessage>(Action<Client, IrcMessageEventArgs<TMessage>> handler) where TMessage : IrcMessage, IServerMessage
+        public void Subscribe<TMessage>(IrcMessageEventHandler<TMessage> handler) where TMessage : IrcMessage, IServerMessage
         {
             var @event = GetHandler<TMessage>();
-            @event.Received += (client, args) => handler(client, args);
+            @event.Received += handler;
         }
 
-        public void TriggerEvent<TMessage>(IrcMessageEventArgs<TMessage> args) where TMessage : IrcMessage, IServerMessage
+        public void Unsubscribe<TMessage>(IrcMessageEventHandler<TMessage> handler) where TMessage : IrcMessage, IServerMessage
         {
-            GetHandler<TMessage>()?.Received?.Invoke(client, args);
+            var @event = GetHandler<TMessage>();
+            @event.Received -= handler;
+        }
+
+        public void Trigger<TMessage>(IrcMessageEventArgs<TMessage> args) where TMessage : IrcMessage, IServerMessage
+        {
+            GetHandler<TMessage>()?.OnReceived(args);
         }
 
         private class ServerMessageEventHandler<TMessage> where TMessage : IrcMessage, IServerMessage
@@ -50,7 +56,7 @@ namespace GravyIrc
                 this.client = client;
             }
 
-            public IrcMessageEventHandler<TMessage> Received = (sender, args) => { };
+            public event IrcMessageEventHandler<TMessage> Received;
             internal void OnReceived(IrcMessageEventArgs<TMessage> args)
             {
                 Received?.Invoke(client, args);
