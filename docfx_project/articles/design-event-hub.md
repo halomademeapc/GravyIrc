@@ -18,7 +18,7 @@ myClient.EventHub.Subscribe<PrivateMessage>((client, args) => Console.WriteLine(
 ### Registering Additional Message Types
 If the type of message you want to listen for isn't in GravyIrc yet, open a pull request!  Please open a pull request :)
 
-If you want to extend things on your end, I've made it easy to do that was well.  You'll need a class that implements [IServerMessage](/api/GravyIrc.Messages.IServerMessage.html) and is decorated with a [ServerMessageAttribute](/api/GravyIrc.Attributes.ServerMessageAttribute.html).
+If you want to extend things on your end, I've made it easy to do that was well.  You'll need a class that extends [IrcMessage](/api/GravyIrc.Messages.IrcMessage.html) and implements [IServerMessage](/api/GravyIrc.Messages.IServerMessage.html). You can decorate it with a [ServerMessageAttribute](/api/GravyIrc.Attributes.ServerMessageAttribute.html) to specify which IRC command it should be bound to.
 ```csharp
 [ServerMessage("POTATO")]
 public class PotatoMessage : IrcMessage, IServerMessage

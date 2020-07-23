@@ -8,6 +8,8 @@
       href: guide-send.md
     - name: Set Mode
       href: guide-mode.md
+    - name: Custom incoming Messages
+      href: guide-add-server-message.md
 - name: Design
   items:
     - name: Event Hub
