@@ -1,6 +1,6 @@
-# Connect to an IRC Server
+# Connect to an IRC server
 
-To connect to an IRC Server, you'll need to provide a [User](/api/GravyIrc.User.html) and [IConnection](/api/GravyIrc.Connection.IConnection.html) to instantiate a new [IrcClient](/api/GravyIrc.IrcClient.html).
+To connect to an IRC server, you'll need to provide a [User](/api/GravyIrc.User.html) and [IConnection](/api/GravyIrc.Connection.IConnection.html) to instantiate a new [IrcClient](/api/GravyIrc.IrcClient.html).
 
 The user object can be created with a nick and an optional real name.
 
