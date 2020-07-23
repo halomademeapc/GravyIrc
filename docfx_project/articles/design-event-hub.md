@@ -11,6 +11,7 @@ To avoid this shortcomings, I changed the event hub to dynamically create and pr
 
 #### Subscribing to an Incoming Message Event
 You can add actions to be taken when a message of a certain type comes in with lambdas or method references.
+
 ```csharp
 myClient.EventHub.Subscribe<PrivateMessage>((client, args) => Console.WriteLine(args.IrcMessage.Message));
 ```
@@ -19,6 +20,7 @@ myClient.EventHub.Subscribe<PrivateMessage>((client, args) => Console.WriteLine(
 If the type of message you want to listen for isn't in GravyIrc yet, open a pull request!  Please open a pull request :)
 
 If you want to extend things on your end, I've made it easy to do that was well.  You'll need a class that extends [IrcMessage](/api/GravyIrc.Messages.IrcMessage.html) and implements [IServerMessage](/api/GravyIrc.Messages.IServerMessage.html). You can decorate it with a [ServerMessageAttribute](/api/GravyIrc.Attributes.ServerMessageAttribute.html) to specify which IRC command it should be bound to.
+
 ```csharp
 [ServerMessage("POTATO")]
 public class PotatoMessage : IrcMessage, IServerMessage
@@ -28,6 +30,7 @@ public class PotatoMessage : IrcMessage, IServerMessage
 ```
 
 Once you have your class ready, register it to [IrcMessage](/api/GravyIrc.Messages.IrcMessage.html) so that incoming messages with that command will be converted to your type and you'll be able to subscribe to events for it.
+
 ```csharp
 IrcMessage.RegisterServerMessageType<PotatoMessage>();
 myClient.EventHub.Subscribe<PotatoMessage>((client, args) => Console.WriteLine("Potatoes are cool!"));
@@ -36,6 +39,9 @@ myClient.EventHub.Subscribe<PotatoMessage>((client, args) => Console.WriteLine("
 After that you should be good to go!
 
 If you don't want to use the annotation to specify command, overloads are provided on IrcMessage.
+
 ```csharp
 IrcMessage.RegisterServerMessageType<CarrotMessage>("CARROT");
 ```
+
+See [Adding a server message type](/articles/guide-add-server-message.html) for more details on this process.

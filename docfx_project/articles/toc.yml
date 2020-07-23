@@ -2,14 +2,16 @@
   items:
     - name: Connecting
       href: guide-connect.md
-    - name: Listen for Messages
+    - name: Listening for Messages
       href: guide-listen.md
-    - name: Send Messages
+    - name: Sending Messages
       href: guide-send.md
-    - name: Set Mode
+    - name: Setting Mode
       href: guide-mode.md
-    - name: Custom incoming Messages
+    - name: Custom Incoming Messages
       href: guide-add-server-message.md
+    - name: Custom Outbound Messages
+      href: guide-add-client-message.md
 - name: Design
   items:
     - name: Event Hub
