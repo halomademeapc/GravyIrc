@@ -7,7 +7,7 @@ namespace GravyIrc.Messages
     /// A private message sent to a channel or directly to a user
     /// </summary>
     [ServerMessage("PRIVMSG")]
-    public class PrivateMessage : IrcMessage, IServerMessage, IClientMessage
+    public class PrivateMessage : IrcMessage, IServerMessage, IClientMessage, IChannelMessage
     {
         /// <summary>
         /// Nick of the sender
@@ -55,8 +55,10 @@ namespace GravyIrc.Messages
         /// <summary>
         /// Indicates if the message was sent to a channel, not a person
         /// </summary>
-        public bool IsChannelMessage => To.StartsWith("#");
+        public bool IsChannelMessage => To?.StartsWith("#") ?? false;
 
         public IEnumerable<string> Tokens => new[] { "PRIVMSG", To, Message };
+
+        public string Target => To;
     }
 }

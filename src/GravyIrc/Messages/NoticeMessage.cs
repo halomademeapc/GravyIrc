@@ -7,7 +7,7 @@ namespace GravyIrc.Messages
     /// A notice messgage sent to a user or channel
     /// </summary>
     [ServerMessage("NOTICE")]
-    public class NoticeMessage : IrcMessage, IServerMessage, IClientMessage
+    public class NoticeMessage : IrcMessage, IServerMessage, IClientMessage, IChannelMessage
     {
         /// <summary>
         /// Nick of user who sent the notice
@@ -47,5 +47,7 @@ namespace GravyIrc.Messages
         }
 
         public IEnumerable<string> Tokens => new[] { "NOTICE", Target, Message };
+
+        public bool IsChannelMessage => Target?.StartsWith("#") ?? false;
     }
 }
