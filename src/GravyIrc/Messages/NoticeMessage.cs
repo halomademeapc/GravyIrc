@@ -48,6 +48,6 @@ namespace GravyIrc.Messages
 
         public IEnumerable<string> Tokens => new[] { "NOTICE", Target, Message };
 
-        public bool IsChannelMessage => Target.StartsWith("#");
+        public bool IsChannelMessage => Target?.StartsWith("#") ?? false;
     }
 }
