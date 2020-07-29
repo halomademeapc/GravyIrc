@@ -15,9 +15,9 @@
     <DebugType Condition="$(codecov) != ''">full</DebugType>
     <DebugType Condition="$(codecov) == ''">portable</DebugType>
     <DebugSymbols>True</DebugSymbols>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Product>GravyIrc</Product>
-    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <PackageReleaseNotes>Add disconnect handler</PackageReleaseNotes>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
