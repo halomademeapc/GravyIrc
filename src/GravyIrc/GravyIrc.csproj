@@ -17,7 +17,7 @@
     <DebugSymbols>True</DebugSymbols>
     <Version>1.0.2</Version>
     <Product>GravyIrc</Product>
-    <PackageReleaseNotes>Add disconnect handler</PackageReleaseNotes>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
