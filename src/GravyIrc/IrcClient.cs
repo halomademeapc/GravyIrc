@@ -48,6 +48,11 @@ namespace GravyIrc
         public event ParsedIrcMessageHandler OnIrcMessageParsed;
 
         /// <summary>
+        /// Indicates that the connection to the IRC server has been terminated or lost
+        /// </summary>
+        public event EventHandler OnDisconnect;
+
+        /// <summary>
         /// Provides you a way to handle various IRC events like OnPing and OnPrivMsg
         /// </summary>
         public EventHub EventHub { get; }
@@ -63,6 +68,7 @@ namespace GravyIrc
 
             this.connection = connection;
             this.connection.DataReceived += Connection_DataReceived;
+            this.connection.Disconnected += Connection_Disconnected;
 
             Channels = new ChannelCollection();
             Queries = new QueryCollection();
@@ -189,6 +195,11 @@ namespace GravyIrc
             var serverMessage = IrcMessage.Create(parsedIRCMessage);
 
             EventHub.Trigger(serverMessage);
+        }
+
+        private void Connection_Disconnected(object sender, EventArgs e)
+        {
+            OnDisconnect?.Invoke(this, e);
         }
 
         /// <summary>
