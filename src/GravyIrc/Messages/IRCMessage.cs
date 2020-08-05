@@ -92,5 +92,10 @@ namespace GravyIrc.Messages
 
             return string.Join(" ", tokens.Select(t => t == tokens.LastOrDefault() && t.Contains(' ') ? $":{t}" : t)).Trim();
         }
+
+        /// <summary>
+        /// Date when message came in or was spawned
+        /// </summary>
+        public DateTime DateReceived { get; private set; } = DateTime.Now;
     }
 }
