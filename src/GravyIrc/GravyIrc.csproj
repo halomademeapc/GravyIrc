@@ -6,7 +6,7 @@
     <VersionPrefix>0.1.1</VersionPrefix>
     <Authors>Alex Griffith</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>NetIRC</AssemblyName>
+    <AssemblyName>GravyIrc</AssemblyName>
     <PackageId>GravyIrc</PackageId>
     <PackageTags>irc,irc-client</PackageTags>
     <RepositoryType>git</RepositoryType>
@@ -15,7 +15,7 @@
     <DebugType Condition="$(codecov) != ''">full</DebugType>
     <DebugType Condition="$(codecov) == ''">portable</DebugType>
     <DebugSymbols>True</DebugSymbols>
-    <Version>1.0.2</Version>
+    <Version>1.1.0</Version>
     <Product>GravyIrc</Product>
     <PackageReleaseNotes>Initial release</PackageReleaseNotes>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
