@@ -2,6 +2,7 @@
 using GravyIrc.Messages;
 using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GravyIrc
@@ -14,6 +15,8 @@ namespace GravyIrc
         private readonly IConnection connection;
 
         private readonly string password;
+
+        private Timer timer;
 
         /// <summary>
         /// Represents the user used to connect to the server
@@ -218,6 +221,11 @@ namespace GravyIrc
             }
             await SendAsync(new NickMessage(User.Nick));
             await SendAsync(new UserMessage(User.Nick, User.RealName));
+
+            if (timer == null)
+            {
+                timer = new Timer(KeepAlive, null, TimeSpan.Zero, TimeSpan.FromSeconds(15));
+            }
         }
 
         /// <summary>
@@ -246,6 +254,19 @@ namespace GravyIrc
         public void Dispose()
         {
             connection.Dispose();
+            if (timer != null)
+            {
+                timer.Dispose();
+                timer = null;
+            }
+        }
+
+        /// <summary>
+        /// Periodically sends a blank message to the server to check connection state
+        /// </summary>
+        private async void KeepAlive(object state)
+        {
+            await connection.SendAsync(string.Empty);
         }
     }
 }
