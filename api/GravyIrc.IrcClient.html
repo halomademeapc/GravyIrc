@@ -1,0 +1,672 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class IrcClient
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class IrcClient
+   ">
+    <meta name="generator" content="docfx 2.51.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="GravyIrc.IrcClient">
+  
+  
+  <h1 id="GravyIrc_IrcClient" data-uid="GravyIrc.IrcClient" class="text-break">Class IrcClient
+  </h1>
+  <div class="markdown level0 summary"><p>The NetIRC IRC client</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">IrcClient</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GravyIrc.html">GravyIrc</a></h6>
+  <h6><strong>Assembly</strong>: GravyIrc.dll</h6>
+  <h5 id="GravyIrc_IrcClient_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class IrcClient : IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/halomademeapc/GravyIrc/new/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/apiSpec/new?filename=GravyIrc_IrcClient__ctor_GravyIrc_User_GravyIrc_Connection_IConnection_.md&amp;value=---%0Auid%3A%20GravyIrc.IrcClient.%23ctor(GravyIrc.User%2CGravyIrc.Connection.IConnection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/src/GravyIrc/IrcClient.cs/#L68">View Source</a>
+  </span>
+  <a id="GravyIrc_IrcClient__ctor_" data-uid="GravyIrc.IrcClient.#ctor*"></a>
+  <h4 id="GravyIrc_IrcClient__ctor_GravyIrc_User_GravyIrc_Connection_IConnection_" data-uid="GravyIrc.IrcClient.#ctor(GravyIrc.User,GravyIrc.Connection.IConnection)">IrcClient(User, IConnection)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the IRC client with a User and an IConnection implementation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IrcClient(User user, IConnection connection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GravyIrc.User.html">User</a></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>User who wishes to connect to the server</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GravyIrc.Connection.IConnection.html">IConnection</a></td>
+        <td><span class="parametername">connection</span></td>
+        <td><p>IConnection implementation</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/halomademeapc/GravyIrc/new/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/apiSpec/new?filename=GravyIrc_IrcClient__ctor_GravyIrc_User_System_String_GravyIrc_Connection_IConnection_.md&amp;value=---%0Auid%3A%20GravyIrc.IrcClient.%23ctor(GravyIrc.User%2CSystem.String%2CGravyIrc.Connection.IConnection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/src/GravyIrc/IrcClient.cs/#L84">View Source</a>
+  </span>
+  <a id="GravyIrc_IrcClient__ctor_" data-uid="GravyIrc.IrcClient.#ctor*"></a>
+  <h4 id="GravyIrc_IrcClient__ctor_GravyIrc_User_System_String_GravyIrc_Connection_IConnection_" data-uid="GravyIrc.IrcClient.#ctor(GravyIrc.User,System.String,GravyIrc.Connection.IConnection)">IrcClient(User, String, IConnection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IrcClient(User user, string password, IConnection connection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GravyIrc.User.html">User</a></td>
+        <td><span class="parametername">user</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">password</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GravyIrc.Connection.IConnection.html">IConnection</a></td>
+        <td><span class="parametername">connection</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/halomademeapc/GravyIrc/new/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/apiSpec/new?filename=GravyIrc_IrcClient_Channels.md&amp;value=---%0Auid%3A%20GravyIrc.IrcClient.Channels%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/src/GravyIrc/IrcClient.cs/#L29">View Source</a>
+  </span>
+  <a id="GravyIrc_IrcClient_Channels_" data-uid="GravyIrc.IrcClient.Channels*"></a>
+  <h4 id="GravyIrc_IrcClient_Channels" data-uid="GravyIrc.IrcClient.Channels">Channels</h4>
+  <div class="markdown level1 summary"><p>An observable collection representing the channels we joined</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ChannelCollection Channels { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GravyIrc.ChannelCollection.html">ChannelCollection</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/halomademeapc/GravyIrc/new/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/apiSpec/new?filename=GravyIrc_IrcClient_EventHub.md&amp;value=---%0Auid%3A%20GravyIrc.IrcClient.EventHub%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/src/GravyIrc/IrcClient.cs/#L61">View Source</a>
+  </span>
+  <a id="GravyIrc_IrcClient_EventHub_" data-uid="GravyIrc.IrcClient.EventHub*"></a>
+  <h4 id="GravyIrc_IrcClient_EventHub" data-uid="GravyIrc.IrcClient.EventHub">EventHub</h4>
+  <div class="markdown level1 summary"><p>Provides you a way to handle various IRC events like OnPing and OnPrivMsg</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EventHub EventHub { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GravyIrc.EventHub.html">EventHub</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/halomademeapc/GravyIrc/new/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/apiSpec/new?filename=GravyIrc_IrcClient_Peers.md&amp;value=---%0Auid%3A%20GravyIrc.IrcClient.Peers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/src/GravyIrc/IrcClient.cs/#L40">View Source</a>
+  </span>
+  <a id="GravyIrc_IrcClient_Peers_" data-uid="GravyIrc.IrcClient.Peers*"></a>
+  <h4 id="GravyIrc_IrcClient_Peers" data-uid="GravyIrc.IrcClient.Peers">Peers</h4>
+  <div class="markdown level1 summary"><p>An observable collection representing all peers (users) the client knows about
+It can be channel users, or query users (private chat)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UserCollection Peers { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GravyIrc.UserCollection.html">UserCollection</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/halomademeapc/GravyIrc/new/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/apiSpec/new?filename=GravyIrc_IrcClient_Queries.md&amp;value=---%0Auid%3A%20GravyIrc.IrcClient.Queries%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/src/GravyIrc/IrcClient.cs/#L34">View Source</a>
+  </span>
+  <a id="GravyIrc_IrcClient_Queries_" data-uid="GravyIrc.IrcClient.Queries*"></a>
+  <h4 id="GravyIrc_IrcClient_Queries" data-uid="GravyIrc.IrcClient.Queries">Queries</h4>
+  <div class="markdown level1 summary"><p>An observable collection representing all queries (private chat)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QueryCollection Queries { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GravyIrc.QueryCollection.html">QueryCollection</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/halomademeapc/GravyIrc/new/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/apiSpec/new?filename=GravyIrc_IrcClient_User.md&amp;value=---%0Auid%3A%20GravyIrc.IrcClient.User%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/src/GravyIrc/IrcClient.cs/#L24">View Source</a>
+  </span>
+  <a id="GravyIrc_IrcClient_User_" data-uid="GravyIrc.IrcClient.User*"></a>
+  <h4 id="GravyIrc_IrcClient_User" data-uid="GravyIrc.IrcClient.User">User</h4>
+  <div class="markdown level1 summary"><p>Represents the user used to connect to the server</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public User User { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GravyIrc.User.html">User</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/halomademeapc/GravyIrc/new/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/apiSpec/new?filename=GravyIrc_IrcClient_ConnectAsync_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20GravyIrc.IrcClient.ConnectAsync(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/src/GravyIrc/IrcClient.cs/#L214">View Source</a>
+  </span>
+  <a id="GravyIrc_IrcClient_ConnectAsync_" data-uid="GravyIrc.IrcClient.ConnectAsync*"></a>
+  <h4 id="GravyIrc_IrcClient_ConnectAsync_System_String_System_Int32_" data-uid="GravyIrc.IrcClient.ConnectAsync(System.String,System.Int32)">ConnectAsync(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Connects to the specified IRC server using the specified port number</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task ConnectAsync(string host, int port = 6667)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">host</span></td>
+        <td><p>IRC server address</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">port</span></td>
+        <td><p>Port number</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>The task object representing the asynchronous operation</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/halomademeapc/GravyIrc/new/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/apiSpec/new?filename=GravyIrc_IrcClient_Dispose.md&amp;value=---%0Auid%3A%20GravyIrc.IrcClient.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/src/GravyIrc/IrcClient.cs/#L254">View Source</a>
+  </span>
+  <a id="GravyIrc_IrcClient_Dispose_" data-uid="GravyIrc.IrcClient.Dispose*"></a>
+  <h4 id="GravyIrc_IrcClient_Dispose" data-uid="GravyIrc.IrcClient.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Disposes the connection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/halomademeapc/GravyIrc/new/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/apiSpec/new?filename=GravyIrc_IrcClient_SendAsync_GravyIrc_Messages_IClientMessage_.md&amp;value=---%0Auid%3A%20GravyIrc.IrcClient.SendAsync(GravyIrc.Messages.IClientMessage)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/src/GravyIrc/IrcClient.cs/#L246">View Source</a>
+  </span>
+  <a id="GravyIrc_IrcClient_SendAsync_" data-uid="GravyIrc.IrcClient.SendAsync*"></a>
+  <h4 id="GravyIrc_IrcClient_SendAsync_GravyIrc_Messages_IClientMessage_" data-uid="GravyIrc.IrcClient.SendAsync(GravyIrc.Messages.IClientMessage)">SendAsync(IClientMessage)</h4>
+  <div class="markdown level1 summary"><p>Allows you to send a strong typed client message to the IRC server</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task SendAsync(IClientMessage message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GravyIrc.Messages.IClientMessage.html">IClientMessage</a></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>An implementation of IClientMessage. Check NetIRC.Messages namespace</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>The task object representing the asynchronous operation</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/halomademeapc/GravyIrc/new/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/apiSpec/new?filename=GravyIrc_IrcClient_SendRaw_System_String_.md&amp;value=---%0Auid%3A%20GravyIrc.IrcClient.SendRaw(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/src/GravyIrc/IrcClient.cs/#L236">View Source</a>
+  </span>
+  <a id="GravyIrc_IrcClient_SendRaw_" data-uid="GravyIrc.IrcClient.SendRaw*"></a>
+  <h4 id="GravyIrc_IrcClient_SendRaw_System_String_" data-uid="GravyIrc.IrcClient.SendRaw(System.String)">SendRaw(String)</h4>
+  <div class="markdown level1 summary"><p>Allows you to send raw data the the IRC server</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task SendRaw(string rawData)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">rawData</span></td>
+        <td><p>The raw data to be sent</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>The task object representing the asynchronous operation</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/halomademeapc/GravyIrc/new/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/apiSpec/new?filename=GravyIrc_IrcClient_OnDisconnect.md&amp;value=---%0Auid%3A%20GravyIrc.IrcClient.OnDisconnect%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/src/GravyIrc/IrcClient.cs/#L56">View Source</a>
+  </span>
+  <h4 id="GravyIrc_IrcClient_OnDisconnect" data-uid="GravyIrc.IrcClient.OnDisconnect">OnDisconnect</h4>
+  <div class="markdown level1 summary"><p>Indicates that the connection to the IRC server has been terminated or lost</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler OnDisconnect</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/halomademeapc/GravyIrc/new/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/apiSpec/new?filename=GravyIrc_IrcClient_OnIrcMessageParsed.md&amp;value=---%0Auid%3A%20GravyIrc.IrcClient.OnIrcMessageParsed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/src/GravyIrc/IrcClient.cs/#L51">View Source</a>
+  </span>
+  <h4 id="GravyIrc_IrcClient_OnIrcMessageParsed" data-uid="GravyIrc.IrcClient.OnIrcMessageParsed">OnIrcMessageParsed</h4>
+  <div class="markdown level1 summary"><p>Indicates that we have parsed the message and gives you a strong typed representation of it
+You get the prefix, command, parameters and some other goodies</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event ParsedIrcMessageHandler OnIrcMessageParsed</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GravyIrc.ParsedIrcMessageHandler.html">ParsedIrcMessageHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/halomademeapc/GravyIrc/new/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/apiSpec/new?filename=GravyIrc_IrcClient_OnRawDataReceived.md&amp;value=---%0Auid%3A%20GravyIrc.IrcClient.OnRawDataReceived%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/src/GravyIrc/IrcClient.cs/#L45">View Source</a>
+  </span>
+  <h4 id="GravyIrc_IrcClient_OnRawDataReceived" data-uid="GravyIrc.IrcClient.OnRawDataReceived">OnRawDataReceived</h4>
+  <div class="markdown level1 summary"><p>Indicates that we received raw data from the server and gives you access to the data</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event IrcRawDataHandler OnRawDataReceived</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GravyIrc.IrcRawDataHandler.html">IrcRawDataHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/halomademeapc/GravyIrc/new/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/apiSpec/new?filename=GravyIrc_IrcClient.md&amp;value=---%0Auid%3A%20GravyIrc.IrcClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/src/GravyIrc/IrcClient.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

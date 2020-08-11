@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Adding a server message type </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Adding a server message type ">
+    <meta name="generator" content="docfx 2.51.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="adding-a-server-message-type">Adding a server message type</h1>
+
+<p>If the type of message you want to listen for isn't in GravyIrc yet, open a pull request!  Seriously, please open a pull request :)</p>
+<p>GravyIrc also lets you register your own server message types at runtime for anything it doesn't handle.  To use this, you'll need to first register the type so that incoming messages will be cast to it when necessary.  After that, you should be able to subscribe to events for it like any of the built-in message types.</p>
+<h2 id="creating-a-custom-server-message-type">Creating a custom server message type</h2>
+<p>Let's start by creating our message type.  This class will need to extend <a href="/api/GravyIrc.Messages.IrcMessage.html">IrcMessage</a> and implement <a href="/api/GravyIrc.Messages.IServerMessage.html">IServerMessage</a>.  Crucially, it must contain a constructor that accepts a <a href="/api/GravyIrc.ParsedIrcMessage.html">ParsedIrcMessage</a>.  This functionality will probably be moved to an initializer method in a future release so that it can be appropriately reflected in the the <a href="/api/GravyIrc.Messages.IServerMessage.html">IServerMessage</a> interface.  Optionally, you can decorate the class with a <a href="/api/GravyIrc.Attributes.ServerMessageAttribute.html">ServerMessageAttribute</a> to specify the IRC command associated with it.</p>
+<pre><code class="lang-csharp">[ServerMessage(&quot;POTATO&quot;)]
+public class PotatoMessage : IrcMessage, IServerMessage
+{
+    public string Spud { get; private set; }
+    public bool IsBaked { get; private set; }
+
+    public PotatoMessage(ParsedIrcMessage parsedMessage)
+    {
+        Spud = parsedMessage.Parameters[0];
+        IsBaked = parsedMessage.Parameters[1] == &quot;BAKED&quot;;
+    }
+}
+</code></pre>
+<h2 id="registering-the-custom-type">Registering the custom type</h2>
+<p>Once you have your custom type ready, you need to register it so that events will be triggered for it.  You can do this by calling the static <code>RegisterServerMessageType</code> method on <a href="/api/GravyIrc.Messages.IrcMessage.html">IrcMessage</a>.  There are several overloads of this provided for your convenience.  If you try to register a message type for a command that is already associated, the previous type will be overridden with your new binding.</p>
+<h3 id="register-using-attribute">Register using attribute</h3>
+<p>If you decorated your message class with <a href="/api/GravyIrc.Attributes.ServerMessageAttribute.html">ServerMessageAttribute</a>, the command specified will automatically be fetched on registration.  You can register your type one of these two ways:</p>
+<pre><code class="lang-csharp">IrcMessage.RegisterServerMessageType&lt;PotatoMessage&gt;();
+// or
+IrcMessage.RegisterServerMessageType(typeof(PotatoMessage));
+</code></pre>
+<h3 id="register-specifying-command">Register specifying command</h3>
+<p>If you did not decorate your message class, you will need to specify the IRC command while registering.  This is similar to registering with the annotation.</p>
+<pre><code class="lang-csharp">IrcMessage.RegisterServerMessageType&lt;PotatoMessage&gt;(&quot;POTATO&quot;);
+// or
+IrcMessage.RegisterServerMessageType(typeof(PotatoMessage), &quot;POTATO&quot;);
+</code></pre>
+<h2 id="subscribing-to-events">Subscribing to events</h2>
+<p>Once the message type is registered, you should be able to subscribe to events for when they come in just like with any built-in message type.</p>
+<pre><code class="lang-csharp">ircClient.EventHub.Subscribe&lt;PotatoMessage&gt;((client, args) =&gt; Console.WriteLine($&quot;Got a {args.IrcMessage.IsBaked ? &quot;baked&quot; : &quot;raw&quot;} potato!&quot;))
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/halomademeapc/GravyIrc/blob/ba155c17cd44ff17b0e72e17171a6d6f2b2020d1/docfx_project/articles/guide-add-server-message.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

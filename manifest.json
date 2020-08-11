@@ -1,0 +1,788 @@
+{
+  "homepages": [],
+  "source_base_path": "/home/travis/build/halomademeapc/GravyIrc/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Attributes.ServerMessageAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Attributes.ServerMessageAttribute.html",
+          "hash": "adA/nkJt/BKqC5ovAumvrw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Attributes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Attributes.html",
+          "hash": "cQjYGR9Kzqny0wKCKusvvA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Channel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Channel.html",
+          "hash": "+CMHklbAE7hhcgQB5twogg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.ChannelCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.ChannelCollection.html",
+          "hash": "8g0kDNKwWXryv1MbPwE+Mg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.ChannelUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.ChannelUser.html",
+          "hash": "6J+1+jDbEtT9iIe69Pu/LA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.ChatMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.ChatMessage.html",
+          "hash": "CPrVcSZAAPiO+/LRinUf+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Connection.DataReceivedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Connection.DataReceivedEventArgs.html",
+          "hash": "AhX/y3uAyBZRzBDLqsmpcw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Connection.IConnection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Connection.IConnection.html",
+          "hash": "pno2ytkCtMYS6yCcK7U6nw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Connection.TcpClientConnection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Connection.TcpClientConnection.html",
+          "hash": "Wz3Dr9ypZuxA8mzszj8diA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Connection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Connection.html",
+          "hash": "lH6PvAeSfvgdt31cuI/qWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.EventHub.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.EventHub.html",
+          "hash": "vgQycQZ3vT5iIWG1nYcxFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.IrcClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.IrcClient.html",
+          "hash": "pTR7KlO0WoyBjRIwXorfQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.IrcCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.IrcCommand.html",
+          "hash": "LaKeBpvaTTmSR5OXnhEzEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.IrcMessageEventArgs-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.IrcMessageEventArgs-1.html",
+          "hash": "BrHi4nX3g3nLN+Cv1JWMGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.IrcMessageEventHandler-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.IrcMessageEventHandler-1.html",
+          "hash": "GlYCeVbDwl25X8ct5fsONg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.IrcNumericReply.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.IrcNumericReply.html",
+          "hash": "8b6T0loyAEVTYo5AGftjyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.IrcPrefix.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.IrcPrefix.html",
+          "hash": "K2nGgz1N642aHevbPMTnFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.IrcRawDataHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.IrcRawDataHandler.html",
+          "hash": "mc976nq+yZGo0ZHe1CCjlQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.IChannelMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.IChannelMessage.html",
+          "hash": "5g1Pj7sZR+RYlRV24aJFdg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.IClientMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.IClientMessage.html",
+          "hash": "IPl6jLdk91S1xbd8aeLoLQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.IServerMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.IServerMessage.html",
+          "hash": "9Gf17GHkQqYMhIZk/chXjg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.IrcMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.IrcMessage.html",
+          "hash": "KeUPzAT3bELOBUubylX2GA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.JoinMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.JoinMessage.html",
+          "hash": "2NYiZQ/9A0ocL9YtK9tldg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.KickMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.KickMessage.html",
+          "hash": "R/A8PidK8j9hj8R8HDDraw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.NickMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.NickMessage.html",
+          "hash": "LjryR7clBdttcNvwAZ+U1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.NoticeMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.NoticeMessage.html",
+          "hash": "qjy1llRXFQcbX5Ax6k1R7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.PartMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.PartMessage.html",
+          "hash": "uQ10GtPFend5xXR7kP4uYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.PasswordMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.PasswordMessage.html",
+          "hash": "4PDQNx4NSCESUsRPtl+dDw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.PingMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.PingMessage.html",
+          "hash": "cZpTjH/YSP5w83CnE3ekQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.PongMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.PongMessage.html",
+          "hash": "Ezx9X9JOWcYa1Wbl+lZaGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.PrivateMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.PrivateMessage.html",
+          "hash": "S+5py3FjEIVHnaTqdzncNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.QuitMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.QuitMessage.html",
+          "hash": "qmP3rYpRIicONdxDhUwT3A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.RplCreatedMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.RplCreatedMessage.html",
+          "hash": "OCE/M5bRN9bMlKy23Pcgcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.RplISupportMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.RplISupportMessage.html",
+          "hash": "XdQXVADUD54zyVkakNykMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.RplMyInfoMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.RplMyInfoMessage.html",
+          "hash": "E0s4pUZcFphErbkcF2YoRA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.RplNamReplyMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.RplNamReplyMessage.html",
+          "hash": "GN9jDyGLri0l29TLX+XooA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.RplWelcomeMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.RplWelcomeMessage.html",
+          "hash": "9lsCeV9DCCeSy3Pywf708g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.RplYourHostMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.RplYourHostMessage.html",
+          "hash": "uL8vaaQpOxSWReqJSjlfSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.UserMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.UserMessage.html",
+          "hash": "ObOy0cVWoXF73Hj5gqVDPQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.UserModeMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.UserModeMessage.html",
+          "hash": "R+3ER8s8Bazcir0FUXwloA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Messages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Messages.html",
+          "hash": "h6W9xk1UwMcN879rJxCiHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.ParsedIrcMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.ParsedIrcMessage.html",
+          "hash": "T4bafEQjapA4HhD4G9aD4Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.ParsedIrcMessageHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.ParsedIrcMessageHandler.html",
+          "hash": "UPmUI7GP9yoOyqjUytRc1Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.Query.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.Query.html",
+          "hash": "NjGWP6IAQT+DLhheQCtRog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.QueryCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.QueryCollection.html",
+          "hash": "0NCInGn9M6AotofBC1LYmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.User.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.User.html",
+          "hash": "MBBQLhYZ9HUZenKIwYWKrQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.UserCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.UserCollection.html",
+          "hash": "J5QIEF7GSZPVhuhQrZJIig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GravyIrc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GravyIrc.html",
+          "hash": "JZFCIAuHzlMklUMTM6bGEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "YZXyu9SdiOqKA0ebapxrYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "40X/zCO2iEzzA5ahnTXsPQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/design-event-hub.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/design-event-hub.html",
+          "hash": "x8zk2OstE3EVb5ZtyKtzAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/examples.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/examples.html",
+          "hash": "Kc88xLGC932lj9T3v7aS8g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/guide-add-client-message.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/guide-add-client-message.html",
+          "hash": "GvxzJd/aREZBrpd6gOdeJQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/guide-add-server-message.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/guide-add-server-message.html",
+          "hash": "iZfFL2iwRVCwiAbv8rsbHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/guide-connect.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/guide-connect.html",
+          "hash": "i84cCFWK29P4KlpPS6a3KQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/guide-listen.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/guide-listen.html",
+          "hash": "fvcpmHvqBMkS8rBgCVzK+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/guide-mode.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/guide-mode.html",
+          "hash": "K4yThSR+N7luwCzROZ+1wQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/guide-send.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/guide-send.html",
+          "hash": "r1Jt1tNosbjitdt3GdLfag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "Z/pStvp51xYiNMcd9eMCXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "6ZeVG3T2QJ6xtbcAMzSkfQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "LxmFaOfbnGOMrfSS4tVUBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 10,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 48,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
